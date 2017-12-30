@@ -45,20 +45,23 @@
 
   MatchGame.renderCards = function(randomCards, $game) {
 
-    var colours = ['hsl(25, 85%, 65%)', 'hsl(55, 85%, 65%)', 'hsl(90, 85%, 65%)', 'hsl(160, 85%, 65%)', 'hsl(220, 85%, 65%)', 'hsl(265, 85%, 65%)', 'hsl(310, 85%, 65%)', 'hsl(360, 85%, 65%)'];
+    var colors = ['hsl(25, 85%, 65%)', 'hsl(55, 85%, 65%)', 'hsl(90, 85%, 65%)', 'hsl(160, 85%, 65%)', 'hsl(220, 85%, 65%)', 'hsl(265, 85%, 65%)', 'hsl(310, 85%, 65%)', 'hsl(360, 85%, 65%)'];
 
     $game.empty();
 
     for (var i = 0; i < randomCards.length; i++) {
+
+      var $number = randomCards[i];
+
       var $card = $('<div class="col col-3 card"></div>');
 
-      $card.data('numberCard', randomCards[randomCards.length]); /* $('.row').append($card); */
+      $card.data('value', randomCards[i]);
       $card.data('flippedCards', false);
-      $card.data('colour', colours[numberCard - 1]);
+      $card.data('color', colors[$number - 1]);
 
       $game.append($card);
-    };
 
+    };
 
   };
 
