@@ -19,11 +19,20 @@ MatchGame.generateCardValues = function () {
     orderedCards.push(value);
   }
 
-  return; 
-  console.log(orderedCards);
-};
+  var randomCards = [];
 
-MatchGame.generateCardValues();
+  while (orderedCards.length > 0) {
+    var randomIndex = Math.floor(Math.random() * orderedCards.length);
+    var randomValue = orderedCards[randomIndex];
+    orderedCards.splice(randomIndex, 1);
+    randomCards.push(randomValue);
+  }
+
+  console.log(randomCards);
+
+}
+
+  MatchGame.generateCardValues();
 
 /*
   Converts card values to jQuery card objects and adds them to the supplied game
